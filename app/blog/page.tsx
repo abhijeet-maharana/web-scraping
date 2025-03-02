@@ -1,9 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import { ChevronRight, Filter, Search, Calendar, User } from "lucide-react";
+import { ChevronRight, Filter, Search, Calendar } from "lucide-react";
 import { Input } from "@/components/ui/input";
 
 const blogPosts = [

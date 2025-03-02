@@ -1,7 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Filter, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";

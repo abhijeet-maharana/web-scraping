@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import {
   ArrowLeft,
@@ -9,7 +7,6 @@ import {
   ChevronRight,
   MessageSquare,
   Share2,
-  User,
 } from "lucide-react";
 
 // This would typically come from a database or CMS
@@ -156,8 +153,8 @@ export default function SuccessStoryDetail({
         <div className="container pt-40 pb-20 text-center">
           <h1 className="text-3xl font-bold mb-4">Story not found</h1>
           <p className="mb-8">
-            The success story you're looking for doesn't exist or has been
-            moved.
+            The success story you&apos;re looking for doesn&apos;t exist or has
+            been moved.
           </p>
           <Button asChild>
             <Link href="/success-stories">

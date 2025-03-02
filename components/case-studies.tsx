@@ -163,7 +163,7 @@ export function CaseStudies() {
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="min-w-full">
                   <blockquote className="text-xl md:text-2xl italic mb-6 text-center">
-                    "{testimonial.text}"
+                    &quot;{testimonial.text}&quot;
                   </blockquote>
                   <div className="flex items-center justify-center gap-4">
                     <div className="relative w-12 h-12 rounded-full overflow-hidden">

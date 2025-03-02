@@ -17,12 +17,12 @@ import {
   Instagram,
 } from "lucide-react";
 
-const clientLogos = [
-  "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
-  "https://images.unsplash.com/photo-1614680376408-81e91ffe3db7?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
-  "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
-  "https://images.unsplash.com/photo-1599305446243-530000b45ae3?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
-];
+// const clientLogos = [
+//   "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+//   "https://images.unsplash.com/photo-1614680376408-81e91ffe3db7?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+//   "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+//   "https://images.unsplash.com/photo-1599305446243-530000b45ae3?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+// ];
 
 export function ContactSection() {
   const { toast } = useToast();
@@ -110,7 +110,7 @@ export function ContactSection() {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <h3 className="text-2xl font-semibold mb-4">Trusted By</h3>
               <div className="grid grid-cols-4 gap-4">
                 {clientLogos.map((logo, index) => (
@@ -126,7 +126,7 @@ export function ContactSection() {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div
