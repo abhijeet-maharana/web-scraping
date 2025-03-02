@@ -36,7 +36,7 @@ export function Navbar() {
 
         <nav className="hidden md:flex items-center gap-8">
           <Link
-            href="#services"
+            href="/services"
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             Services
@@ -52,6 +52,18 @@ export function Navbar() {
             className="text-muted-foreground hover:text-foreground transition-colors"
           >
             Blog
+          </Link>
+          <Link
+            href="/about"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            About
+          </Link>
+          <Link
+            href="/contact"
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Contact
           </Link>
         </nav>
 
