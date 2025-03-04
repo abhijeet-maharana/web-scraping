@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Database, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
@@ -69,13 +69,17 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Button
-            size="sm"
-            className="bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white"
+          <Link
+            href="https://wa.me/+917008954962"
+            target="_blank"
+            className={cn(
+              buttonVariants({ size: "sm" }),
+              "bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white"
+            )}
           >
             <MessageCircle className="h-4 w-4 mr-2" />
             WhatsApp us
-          </Button>
+          </Link>
         </div>
       </div>
     </header>

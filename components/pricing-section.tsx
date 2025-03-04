@@ -13,7 +13,7 @@ const pricingPlans = {
       id: 1,
       name: "Basic",
       description: "Perfect for small projects and one-time data needs",
-      price: "$499",
+      price: "$49",
       features: [
         "Single website data extraction",
         "Up to 10,000 data points",
@@ -28,7 +28,7 @@ const pricingPlans = {
       id: 2,
       name: "Standard",
       description: "Ideal for medium-sized projects with specific requirements",
-      price: "$999",
+      price: "$99",
       features: [
         "Multiple website data extraction",
         "Up to 50,000 data points",
@@ -62,7 +62,7 @@ const pricingPlans = {
       id: 1,
       name: "Basic",
       description: "Perfect for ongoing data needs with regular updates",
-      price: "$299",
+      price: "$49",
       period: "/month",
       features: [
         "Single website data monitoring",
@@ -79,7 +79,7 @@ const pricingPlans = {
       id: 2,
       name: "Standard",
       description: "Ideal for businesses requiring comprehensive data access",
-      price: "$799",
+      price: "$99",
       period: "/month",
       features: [
         "Multiple website data monitoring",
@@ -116,32 +116,49 @@ const pricingPlans = {
 };
 
 export function PricingSection() {
-  const [billingType, setBillingType] = useState<"oneTime" | "recurring">("recurring");
+  const [billingType, setBillingType] = useState<"oneTime" | "recurring">(
+    "recurring"
+  );
 
   return (
-    <section id="pricing" className="py-24 bg-gradient-to-b from-background/90 to-background">
+    <section
+      id="pricing"
+      className="py-24 bg-gradient-to-b from-background/90 to-background"
+    >
       <div className="container">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Transparent Pricing</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Transparent Pricing
+          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Choose the plan that fits your data extraction needs.
           </p>
-          
+
           <div className="flex items-center justify-center mt-8 space-x-4">
-            <span className={cn(
-              "text-sm font-medium transition-colors",
-              billingType === "oneTime" ? "text-foreground" : "text-muted-foreground"
-            )}>
+            <span
+              className={cn(
+                "text-sm font-medium transition-colors",
+                billingType === "oneTime"
+                  ? "text-foreground"
+                  : "text-muted-foreground"
+              )}
+            >
               One-Time
             </span>
             <Switch
               checked={billingType === "recurring"}
-              onCheckedChange={(checked) => setBillingType(checked ? "recurring" : "oneTime")}
+              onCheckedChange={(checked) =>
+                setBillingType(checked ? "recurring" : "oneTime")
+              }
             />
-            <span className={cn(
-              "text-sm font-medium transition-colors",
-              billingType === "recurring" ? "text-foreground" : "text-muted-foreground"
-            )}>
+            <span
+              className={cn(
+                "text-sm font-medium transition-colors",
+                billingType === "recurring"
+                  ? "text-foreground"
+                  : "text-muted-foreground"
+              )}
+            >
               Recurring
             </span>
           </div>
@@ -167,19 +184,19 @@ export function PricingSection() {
                   Most Popular
                 </div>
               )}
-              
+
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                 <p className="text-muted-foreground mb-6">{plan.description}</p>
-                
+
                 <div className="mb-6">
                   <span className="text-4xl font-bold">{plan.price}</span>
                   {plan.period && (
                     <span className="text-muted-foreground">{plan.period}</span>
                   )}
                 </div>
-                
-                <Button 
+
+                <Button
                   className={cn(
                     "w-full mb-8",
                     plan.popular
@@ -190,14 +207,18 @@ export function PricingSection() {
                 >
                   {plan.cta}
                 </Button>
-                
+
                 <div className="space-y-4">
                   {plan.features.map((feature, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <div className={cn(
-                        "mt-1 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0",
-                        plan.popular ? "bg-primary text-primary-foreground" : "bg-muted"
-                      )}>
+                      <div
+                        className={cn(
+                          "mt-1 w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0",
+                          plan.popular
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-muted"
+                        )}
+                      >
                         <Check className="w-3 h-3" />
                       </div>
                       <span className="text-sm">{feature}</span>

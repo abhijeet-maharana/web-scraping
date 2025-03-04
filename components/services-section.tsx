@@ -12,49 +12,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-
-const services = [
-  {
-    id: 1,
-    title: "Data-as-a-Service (DaaS) API",
-    description:
-      "Access live & structured data feeds through our robust API. Perfect for integrating real-time web data into your applications.",
-    details:
-      "Our DaaS API provides continuous access to structured web data from thousands of sources. We handle the extraction, cleaning, and delivery so you can focus on using the data.",
-    icon: Database,
-    color: "from-blue-500 to-cyan-400",
-  },
-  {
-    id: 2,
-    title: "E-commerce & Price Monitoring",
-    description:
-      "Track competitor prices, product information, and market trends across e-commerce platforms.",
-    details:
-      "Stay ahead of the competition with real-time price monitoring across major marketplaces. Track pricing changes, stock levels, and product details to optimize your pricing strategy.",
-    icon: ShoppingCart,
-    color: "from-purple-500 to-pink-400",
-  },
-  {
-    id: 3,
-    title: "Lead Generation & Contact Scraping",
-    description:
-      "Build targeted B2B email lists and sales leads from company websites, directories, and professional networks.",
-    details:
-      "Ethically source contact information for your target audience. Our systems can identify decision-makers, extract verified contact details, and help you build high-quality lead lists.",
-    icon: Users,
-    color: "from-amber-500 to-orange-400",
-  },
-  {
-    id: 4,
-    title: "Real Estate & Finance Data Extraction",
-    description:
-      "Extract property listings, financial data, and market research for investment analysis and business intelligence.",
-    details:
-      "Get comprehensive real estate and financial data from multiple sources. Track property listings, price history, market trends, and financial indicators to make informed investment decisions.",
-    icon: Building,
-    color: "from-emerald-500 to-green-400",
-  },
-];
+import { services } from "@/data/services";
 
 export function ServicesSection() {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
@@ -74,7 +32,7 @@ export function ServicesSection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {services.map((service) => (
+          {services.slice(0, 4).map((service) => (
             <motion.div
               key={service.id}
               className={cn(

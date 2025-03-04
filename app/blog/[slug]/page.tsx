@@ -317,7 +317,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
           </p>
           <Button
             size="lg"
-            className="bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500"
+            className="bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white"
           >
             <MessageSquare className="h-5 w-5 mr-2" />
             Contact us

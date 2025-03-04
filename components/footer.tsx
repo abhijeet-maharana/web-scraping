@@ -25,14 +25,6 @@ export function Footer() {
                   href="#services"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Data-as-a-Service API
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#services"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
                   E-commerce Monitoring
                 </Link>
               </li>
@@ -60,10 +52,10 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#"
+                  href="/about"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  About Us
+                  About
                 </Link>
               </li>
               <li>
@@ -84,7 +76,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Contact

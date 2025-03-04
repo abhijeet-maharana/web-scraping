@@ -15,8 +15,6 @@ import {
   Twitter,
   Facebook,
   Instagram,
-  MapPin,
-  Clock,
 } from "lucide-react";
 
 export default function ContactPage() {
@@ -35,13 +33,29 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
+    const response = await fetch("https://formspree.io/f/movjgoln", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
     });
-    setFormData({ name: "", email: "", company: "", message: "" });
+
+    if (response.ok) {
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+      setFormData({ name: "", email: "", company: "", message: "" });
+    } else {
+      toast({
+        title: "Error",
+        description:
+          "There was an error sending your message. Please try again later.",
+      });
+    }
   };
 
   return (
@@ -77,15 +91,12 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <MessageSquare className="w-5 h-5 text-primary" />
-                  <span>WhatsApp: +917008954962</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  <span>123 Data Street, Tech City, 10001</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-primary" />
-                  <span>Mon-Fri: 9:00 AM - 6:00 PM (EST)</span>
+                  <a
+                    href="https://wa.me/+917008954962"
+                    className="text-primary hover:underline"
+                  >
+                    WhatsApp
+                  </a>
                 </div>
               </div>
             </div>
@@ -209,20 +220,6 @@ export default function ContactPage() {
               </Button>
             </form>
           </motion.div>
-        </div>
-
-        <div className="mt-16 max-w-5xl mx-auto">
-          <div className="bg-card border border-border rounded-xl overflow-hidden">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30596552044!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1651234567890!5m2!1sen!2sin"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
         </div>
       </div>
     </section>

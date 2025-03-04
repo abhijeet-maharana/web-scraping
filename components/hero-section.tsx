@@ -1,7 +1,9 @@
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { DataAnimation } from "@/components/ui/data-animation";
 import { Shield, CheckCircle, Lock, MessageSquare } from "lucide-react";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export function HeroSection() {
   return (
@@ -20,13 +22,16 @@ export function HeroSection() {
             hassle-free!
           </p>
 
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all"
+          <Link
+            href="/contact"
+            className={cn(
+              buttonVariants({ size: "lg" }),
+              "bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all"
+            )}
           >
             <MessageSquare className="h-5 w-5 mr-2" />
             Contact us
-          </Button>
+          </Link>
 
           <div className="flex flex-wrap justify-center gap-4 mt-12">
             <Badge

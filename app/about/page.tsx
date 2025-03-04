@@ -1,11 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
-  Database,
   Shield,
   Zap,
   Users,
@@ -14,70 +12,7 @@ import {
   ChevronRight,
   MessageSquare,
 } from "lucide-react";
-
-const teamMembers = [
-  {
-    name: "Alex Johnson",
-    role: "Founder & CEO",
-    bio: "With over 15 years of experience in data science and web technologies, Alex founded the company with a vision to make web data accessible to businesses of all sizes.",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    name: "Sarah Williams",
-    role: "CTO",
-    bio: "Sarah leads our technical team, bringing expertise in distributed systems, machine learning, and ethical data collection practices.",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    name: "Michael Chen",
-    role: "Head of Data Science",
-    bio: "Michael oversees our data processing pipelines and ensures the highest quality of data delivery to our clients.",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-  },
-  {
-    name: "Emma Rodriguez",
-    role: "Legal & Compliance Director",
-    bio: "Emma ensures all our data collection practices are ethical, legal, and compliant with global regulations.",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-  },
-];
-
-const milestones = [
-  {
-    year: "2018",
-    title: "Company Founded",
-    description:
-      "Started with a small team of 3 data scientists focused on e-commerce data extraction.",
-  },
-  {
-    year: "2020",
-    title: "First Enterprise Client",
-    description:
-      "Secured our first Fortune 500 client and expanded our team to 15 members.",
-  },
-  {
-    year: "2022",
-    title: "API Platform Launch",
-    description:
-      "Launched our Data-as-a-Service API platform, serving over 100 businesses.",
-  },
-  {
-    year: "2023",
-    title: "International Expansion",
-    description:
-      "Opened offices in Europe and Asia to better serve our global client base.",
-  },
-  {
-    year: "2025",
-    title: "AI Integration",
-    description:
-      "Integrated advanced AI capabilities into our data extraction and analysis services.",
-  },
-];
+import { cn } from "@/lib/utils";
 
 const values = [
   {
@@ -119,14 +54,14 @@ export default function AboutPage() {
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About Me</h1>
             <p className="text-xl text-muted-foreground mb-6">
-              I'm a data extraction specialist with a passion for turning web
-              data into valuable business insights.
+              I&apos;m a software developer and web scraping expert with over 4
+              years of experience in turning web data into valuable business
+              insights.
             </p>
             <p className="text-muted-foreground mb-6">
-              With over 7 years of experience in web scraping and data
-              extraction, I've helped businesses of all sizes access the data
-              they need to make informed decisions, gain competitive advantages,
-              and drive growth.
+              I&apos;ve helped businesses of all sizes access the data they need
+              to make informed decisions, gain competitive advantages, and drive
+              growth.
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="flex items-center gap-2">
@@ -143,7 +78,7 @@ export default function AboutPage() {
               </div>
             </div>
           </motion.div>
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -155,12 +90,12 @@ export default function AboutPage() {
               fill
               className="object-cover"
             />
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
       {/* Our Story */}
-      <section className="bg-card border-y border-border py-20 mb-20">
+      {/* <section className="bg-card border-y border-border py-20 mb-20">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">My Journey</h2>
@@ -207,7 +142,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Our Values */}
       <section className="container mb-20">
@@ -350,18 +285,19 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Work Together?</h2>
             <p className="text-muted-foreground mb-8">
-              Let's discuss how I can help you extract the data you need to grow
-              your business.
+              Let&apos;s discuss how I can help you extract the data you need to
+              grow your business.
             </p>
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500"
+            <Link
+              href="/contact"
+              className={cn(
+                buttonVariants({ size: "lg" }),
+                "bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 text-white"
+              )}
             >
-              <Link href="/contact" className="flex items-center">
-                <MessageSquare className="h-5 w-5 mr-2" />
-                Contact Me
-              </Link>
-            </Button>
+              <MessageSquare className="h-5 w-5 mr-2" />
+              Contact Me
+            </Link>
           </div>
         </div>
       </section>
